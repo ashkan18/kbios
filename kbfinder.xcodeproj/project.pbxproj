@@ -14,6 +14,8 @@
 		4193825B1B6FC823001E7661 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4193825A1B6FC823001E7661 /* Images.xcassets */; };
 		4193825E1B6FC823001E7661 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4193825C1B6FC823001E7661 /* LaunchScreen.xib */; };
 		4193826A1B6FC823001E7661 /* kbfinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 419382691B6FC823001E7661 /* kbfinderTests.m */; };
+		419382751B6FDCD4001E7661 /* KBApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 419382741B6FDCD4001E7661 /* KBApiClient.m */; };
+		F810D4A394805D33C94342A5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 037729F9A5B7E35A3122E642 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		037729F9A5B7E35A3122E642 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4193824A1B6FC823001E7661 /* kbfinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kbfinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4193824E1B6FC823001E7661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4193824F1B6FC823001E7661 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +43,10 @@
 		419382631B6FC823001E7661 /* kbfinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kbfinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		419382681B6FC823001E7661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		419382691B6FC823001E7661 /* kbfinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kbfinderTests.m; sourceTree = "<group>"; };
+		419382731B6FDCD4001E7661 /* KBApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBApiClient.h; sourceTree = "<group>"; };
+		419382741B6FDCD4001E7661 /* KBApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBApiClient.m; sourceTree = "<group>"; };
+		519E9FC3AC40002C14E7C286 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BC87D7A9BBD9CB72BB6AC257 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F810D4A394805D33C94342A5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C92426ADF616108224EDAAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC87D7A9BBD9CB72BB6AC257 /* Pods.debug.xcconfig */,
+				519E9FC3AC40002C14E7C286 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		419382411B6FC823001E7661 = {
 			isa = PBXGroup;
 			children = (
 				4193824C1B6FC823001E7661 /* kbfinder */,
 				419382661B6FC823001E7661 /* kbfinderTests */,
 				4193824B1B6FC823001E7661 /* Products */,
+				1C92426ADF616108224EDAAC /* Pods */,
+				EC353D551CAB77E8DF0291B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +108,8 @@
 				4193825A1B6FC823001E7661 /* Images.xcassets */,
 				4193825C1B6FC823001E7661 /* LaunchScreen.xib */,
 				4193824D1B6FC823001E7661 /* Supporting Files */,
+				419382731B6FDCD4001E7661 /* KBApiClient.h */,
+				419382741B6FDCD4001E7661 /* KBApiClient.m */,
 			);
 			path = kbfinder;
 			sourceTree = "<group>";
@@ -119,6 +140,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EC353D551CAB77E8DF0291B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				037729F9A5B7E35A3122E642 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4193826D1B6FC823001E7661 /* Build configuration list for PBXNativeTarget "kbfinder" */;
 			buildPhases = (
+				71AE02A01C6CB3CD2B57E289 /* Check Pods Manifest.lock */,
 				419382461B6FC823001E7661 /* Sources */,
 				419382471B6FC823001E7661 /* Frameworks */,
 				419382481B6FC823001E7661 /* Resources */,
+				8F1242D9E4D9CD1353BE3828 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +245,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71AE02A01C6CB3CD2B57E289 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F1242D9E4D9CD1353BE3828 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		419382461B6FC823001E7661 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -221,6 +285,7 @@
 			files = (
 				419382561B6FC823001E7661 /* ViewController.m in Sources */,
 				419382531B6FC823001E7661 /* AppDelegate.m in Sources */,
+				419382751B6FDCD4001E7661 /* KBApiClient.m in Sources */,
 				419382501B6FC823001E7661 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +412,7 @@
 		};
 		4193826E1B6FC823001E7661 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC87D7A9BBD9CB72BB6AC257 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = kbfinder/Info.plist;
@@ -357,6 +423,7 @@
 		};
 		4193826F1B6FC823001E7661 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 519E9FC3AC40002C14E7C286 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = kbfinder/Info.plist;
@@ -418,6 +485,7 @@
 				4193826F1B6FC823001E7661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		419382701B6FC823001E7661 /* Build configuration list for PBXNativeTarget "kbfinderTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +494,7 @@
 				419382721B6FC823001E7661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
