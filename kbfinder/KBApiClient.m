@@ -14,7 +14,7 @@
                    successBlock:(void(^)(id responseObject))successBlock
                      errorBlock:(void(^)(NSError *error))errorBlock
 {
-    NSString *path = [NSString stringWithFormat:@"api/artists/%@", artistName];
+    NSString *path = [NSString stringWithFormat:@"api/artists/kbdegree/%@", artistName];
     [self GET:path
    parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
        successBlock(responseObject);

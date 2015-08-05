@@ -27,7 +27,7 @@
             }
             else  {
                 for (NSDictionary *path in responseObject) {
-                    string = [string stringByAppendingString:path[@"name"]];
+                    string = [string stringByAppendingString:[NSString stringWithFormat:@"%@\n", path[@"name"]]];
                 }
             }
             self.resultView.text = string;
