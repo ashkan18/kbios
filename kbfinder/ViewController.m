@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "KBApiClient.h"
+#import <MRProgress/MRProgress.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
@@ -19,8 +20,10 @@
 
 - (IBAction)searchPressed:(id)sender {
     if (self.searchField.text) {
+        [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
         self.resultView.text = @"";
-        [self.client getDegreeWithArtistName:@"sean-penn" successBlock:^(id responseObject) {
+        [self.client getDegreeWithArtistName:[self.searchField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] successBlock:^(id responseObject) {
+            [MRProgressOverlayView dismissOverlayForView:self.view.window animated:YES];
             NSString *string = @"";
             if ([responseObject isKindOfClass:[NSDictionary class]]) {
                 string = responseObject[@"name"];
@@ -32,6 +35,7 @@
             }
             self.resultView.text = string;
         } errorBlock:^(NSError *error) {
+            [MRProgressOverlayView dismissOverlayForView:self.view animated:YES];
             NSLog(@"error occured %@" , error);
         }];
     }
